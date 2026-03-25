@@ -1,4 +1,4 @@
-# Alpha Round 1 Feedback — v1.0.0-alpha.1
+# Alpha Round 1 Feedback - v1.0.0-alpha.1
 
 **Collection Period:** 2026-03-24 to 2026-03-31  
 **Testers:** 3-5 trusted users  
@@ -8,15 +8,25 @@
 
 | Metric | Target | Actual | Status |
 |--------|--------|--------|--------|
-| Testers Invited | 5 | 0 | ⏳ Pending |
-| Downloads | 3+ | 0 | ⏳ Pending |
-| Launch Success Rate | 100% | — | ⏳ Pending |
-| Critical Bugs | 0 | — | ⏳ Pending |
-| Feedback Responses | 3+ | — | ⏳ Pending |
+| Testers Invited | 5 | 0 | Pending |
+| Downloads | 3+ | 0 | Pending |
+| Launch Success Rate | 100% | - | Pending |
+| Critical Bugs | 0 | - | Pending |
+| Feedback Responses | 3+ | 0 | Pending |
+
+## Live Metrics
+
+| Metric | Target | Current | Notes |
+|--------|--------|---------|-------|
+| Invites Sent | 5 | 0 | Pending |
+| Downloads Confirmed | 3+ | 0 | Pending |
+| Launch Success | 100% | - | Pending |
+| Feedback Received | 3+ | 0 | Pending |
+| Critical Bugs | 0 | - | None yet |
 
 ## Feedback by Category
 
-### Launch & Stability
+### Launch and Stability
 
 ```text
 [Tester Name]: "App launched in ~3 seconds, stayed open."
@@ -40,22 +50,40 @@
 ### AI Signals
 
 ```text
-[Tester Name]: "Confidence % and reasoning were helpful."
-[Tester Name]: "Wish there was a 'Why this signal?' tooltip."
+[Tester Name]: "Confidence and reasoning were helpful."
+[Tester Name]: "Wish there was a tooltip for signal reasoning."
 ```
 
-### UI/UX Polish
+### UI and UX Polish
 
 ```text
 [Tester Name]: "Dark theme is easy on the eyes."
 [Tester Name]: "Sidebar navigation was clear."
 ```
 
-### Bugs / Issues
+### Bugs and Issues
 
 | Tester | Description | Severity | Workaround | Status |
 |--------|-------------|----------|------------|--------|
-| — | — | — | — | — |
+| - | - | - | - | - |
+
+## Feedback Log
+
+### [Tester Name] - 2026-03-24
+
+**Launch:** PASS  
+**Onboarding:** "Clear, but step 3 felt long."  
+**Simulation:** "Easy to place a test order."  
+**Issues:** None  
+**Suggestions:** "Add tooltip for AI reasoning."
+
+### [Tester Name] - 2026-03-25
+
+**Launch:**  
+**Onboarding:**  
+**Simulation:**  
+**Issues:**  
+**Suggestions:**  
 
 ## Top 3 Requests for v1.0.0-alpha.2
 
@@ -65,7 +93,7 @@
 
 ## Go/No-Go Decision for Public Beta
 
-**Decision:** ⏳ Pending feedback
+**Decision:** Pending feedback
 
 **Criteria:**
 
