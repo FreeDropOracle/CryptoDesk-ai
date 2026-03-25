@@ -1,50 +1,90 @@
 # CryptoDesk AI
 
-CryptoDesk AI is a security-first Electron desktop application for non-custodial crypto trading, simulation-first execution, and explainable AI advisory workflows.
+> Trade smarter. Not harder.
 
-The project is currently positioned for a controlled beta launch. Core product phases are implemented, the renderer boundary is hardened, and live trading remains intentionally gated until full dependency installation, signing, and runtime verification are complete.
+[![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Electron](https://img.shields.io/badge/Electron-28.x-47848F?logo=electron&logoColor=white)](https://www.electronjs.org/)
+[![React](https://img.shields.io/badge/React-18.x-61DAFB?logo=react&logoColor=111827)](https://react.dev/)
+[![License](https://img.shields.io/badge/License-MIT-16A34A)](LICENSE)
+[![Release](https://img.shields.io/badge/Release-v1.0.0--alpha.1-F59E0B)](https://github.com/FreeDropOracle/CryptoDesk-ai/releases)
 
-## What Ships Today
+CryptoDesk AI is an AI-powered desktop trading co-pilot built with a security-first architecture. The current alpha is designed around three principles:
 
-- Non-custodial credential handling with local encryption and OS keychain storage
-- Strict TypeScript boundaries across `main`, `preload`, `renderer`, and shared contracts
-- Read-only market and portfolio preview flows through validated IPC
-- Simulation trading with fat-finger confirmation and isolated virtual balances
-- Explainable AI signals with transparent risk filtering, metrics, and live advisory alerts
-- Bilingual UX support for English and Arabic, including RTL shell behavior for Arabic
+- non-custodial credential handling
+- simulation-first learning and testing
+- explainable, advisory-only AI
 
-## Security Model
+This repository is ready for controlled beta review, contributor onboarding, and release operations. Live trading remains intentionally gated until signing, runtime hardening, and broader validation are complete.
 
-- Renderer code has no direct Node.js, filesystem, or credential access
-- All privileged actions cross preload through typed, validated IPC channels
-- Secrets are never intended for logs, local storage, or server-side custody
-- AI remains advisory-only in this release track
-- Live trading stays disabled by default until release hardening is finished
+## Current Alpha Scope
 
-## Current Product Status
+What ships today:
 
-- Phase 1: Foundation and security hardening completed
-- Phase 2: Read-only connection engine completed
-- Phase 3: Simulation trading workspace completed
-- Phase 4: Explainable AI and alerting completed
-- Phase 5: UX polish and launch preparation largely completed
+- real-time market data through validated Electron IPC flows
+- read-only portfolio preview
+- simulation trading with isolated virtual balances
+- explainable AI signals with transparent filtering and metrics
+- bilingual user experience in English and Arabic
+- onboarding flow with explicit risk acknowledgment
 
-## Launch Readiness Snapshot
+What is intentionally limited in `v1.0.0-alpha.1`:
 
-Completed now:
+- Windows build only
+- unsigned alpha build
+- simulation-first usage path
+- AI is advisory only and never auto-executes trades
+- public live-trading execution is still disabled
 
-- Bilingual error messages across critical renderer flows
-- Onboarding wizard with required risk acknowledgment
-- Contextual tooltips in key trading and settings surfaces
-- Pre-launch audit checklist and closed beta plan
-- Signing placeholders in packaging configuration
+## Quick Start
 
-Still pending full release hardening:
+1. Download the latest Windows alpha from [Releases](https://github.com/FreeDropOracle/CryptoDesk-ai/releases).
+2. Extract the zip archive to a new folder.
+3. Run `CryptoDesk AI.exe`.
+4. Complete onboarding.
+5. Start in Simulation Mode before testing any exchange connectivity.
 
-- Performance profiling under real runtime load
-- Production code signing
-- Auto-update publication metadata
-- macOS and Linux distributable artifacts
+## Downloads
+
+| Platform | Version | Link |
+|----------|---------|------|
+| Windows x64 | 1.0.0-alpha.1 | [Download ZIP](https://github.com/FreeDropOracle/CryptoDesk-ai/releases/tag/v1.0.0-alpha.1) |
+
+Alpha notes:
+
+- Windows may show an `Unknown Publisher` warning because code signing is not enabled yet.
+- The primary tester artifact is a zip package, not an installer.
+- The recommended path for new testers is onboarding plus simulation mode.
+
+## Security First
+
+- renderer code has no direct Node.js or credential access
+- preload is the only privileged bridge into the main process
+- IPC payloads are validated with Zod before privileged work runs
+- secrets are stored locally with OS keychain integration and AES-256-GCM encryption
+- the product is non-custodial by design
+
+See [Security Protocol](docs/security/encryption-spec.md) and [Threat Model](docs/architecture/threat-model.md).
+
+## Product Highlights
+
+### Simulation Workspace
+
+- virtual buying power and isolated paper-trading ledger
+- trade history for simulation-only activity
+- risk guardrails and fat-finger confirmation flow
+
+### Explainable AI
+
+- buy, sell, and hold signals with confidence scores
+- transparent reasoning and risk filtering
+- metrics dashboard and live advisory alerts
+
+### User Experience
+
+- dark desktop-first interface
+- onboarding wizard with risk acknowledgment
+- contextual tooltips in key screens
+- English and Arabic support, including RTL behavior for Arabic
 
 ## Development Quick Start
 
@@ -52,153 +92,67 @@ Recommended environment:
 
 - Node `20.11.0 LTS`
 - npm `10.x`
-- Windows: Visual Studio Build Tools with `Desktop development with C++` for native modules
-- Windows users should prefer `npm.cmd` in PowerShell if execution policy blocks `npm.ps1`
+- Windows: Visual Studio Build Tools with `Desktop development with C++`
 
-Prerequisites:
+Install and run:
 
-- Node.js `20.11.0 LTS` is required for stable native module support
-- npm `9+`
-- Windows users need Visual Studio Build Tools before rebuilding `better-sqlite3`, `keytar`, or Electron native artifacts
-
-Basic workflow:
-
-1. Install dependencies with `npm install`.
-2. Review `.env.example` and set local development values in `.env`.
-3. Run `npm run typecheck`.
-4. Run `npm test`.
-5. Start the project with `npm run dev`.
+```powershell
+npm install
+npm run typecheck
+npm test
+npm run dev
+```
 
 Windows packaging for the current alpha track:
 
-1. Run `npm run build:win`.
-2. Use the generated zip artifact in `dist/release/` for tester distribution.
-3. Use `dist/release/win-unpacked/` for local smoke validation.
-
-The single-file portable target remains available as an experimental fallback, but the stable local Windows build path is currently the zip package described in `docs/development/build-windows.md`.
-
-## Downloads
-
-| Platform | Version | Link |
-|----------|---------|------|
-| Windows x64 | 1.0.0-alpha.1 | [Download ZIP](https://github.com/FreeDropOracle/cryptodesk-ai/releases/tag/v1.0.0-alpha.1) |
-
-Alpha release notes:
-
-- unsigned alpha build for testing and feedback
-- simulation-first and advisory-only workflow
-- start with onboarding and simulation mode before any exchange connectivity
-
-## Offline-First Verification
-
-When native modules or network access are blocked, use the partial TypeScript verification workflow:
-
 ```powershell
-.\.tscheck-tools\node_modules\.bin\tsc.cmd --project tsconfig.check.json --noEmit
+npm run build:win
 ```
 
-This verifies the Electron security boundary, preload bridge, shared contracts, and key renderer-safe modules before the full dependency graph is available.
+See [Windows Build Instructions](docs/development/build-windows.md) and [Development Setup](docs/development/setup.md).
 
-See `docs/development/offline-first-workflow.md` for the full process.
+## Documentation
 
-## Internationalization
+Core references:
 
-CryptoDesk AI includes bilingual support for English and Arabic in the navigation shell, onboarding flow, settings, tooltips, and user-facing error states.
+- [Architecture Overview](docs/architecture/overview.md)
+- [Architecture Decisions](docs/architecture/decisions/)
+- [API / IPC Channels](docs/api/ipc-channels.md)
+- [Getting Started Guide](docs/user-guide/getting-started.md)
+- [Beta Testing Plan](docs/launch/beta-testing-plan.md)
+- [Release Operations Plan](docs/ops/release-ops-plan.md)
 
-- Language is controlled by `settings.locale`
-- Arabic automatically switches the UI shell to RTL layout
-- Translation definitions live in `src/renderer/utils/i18n.ts`
-- RTL presentation rules live in `src/renderer/styles/rtl.css`
+Launch package:
 
-## Key Project Documents
+- [Launch Sign-off](docs/launch/launch-signoff.md)
+- [Public Launch Announcement](docs/launch/public-launch-announcement.md)
+- [Video Demo Script](docs/launch/video-demo-script.md)
+- [GitHub Release Draft Guide](docs/launch/github-release-draft.md)
+- [Smoke Test Report](docs/ops/smoke-test-report.md)
 
-- `CHANGELOG.md`
-- `docs/security/pre-launch-audit.md`
-- `docs/launch/beta-testing-plan.md`
-- `docs/launch/faq.md`
-- `docs/launch/beta-intake-form.md`
-- `docs/launch/selection-criteria.md`
-- `docs/launch/acceptance-email.md`
-- `docs/launch/rejection-email.md`
-- `docs/launch/applicant-tracker.md`
-- `docs/launch/beta-recruitment-posts.md`
-- `docs/launch/beta-launch-checklist.md`
-- `docs/launch/discord-server-setup.md`
-- `docs/launch/bug-report-template.md`
-- `docs/launch/weekly-survey.md`
-- `docs/launch/beta-metrics-dashboard.md`
-- `docs/launch/crisis-communication-plan.md`
-- `docs/launch/video-demo-script.md`
-- `docs/launch/pre-recording-checklist.md`
-- `docs/launch/social-cutdowns.md`
-- `docs/launch/video-demo-plan.md`
-- `docs/launch/public-launch-announcement.md`
-- `docs/launch/platform-variants.md`
-- `docs/launch/press-kit.md`
-- `docs/launch/email-sequence.md`
-- `docs/launch/launch-day-runbook.md`
-- `docs/launch/launch-signoff.md`
-- `docs/launch/public-announcement-plan.md`
-- `.github/RELEASE_TEMPLATE.md`
-- `.github/ISSUE_TEMPLATE/bug_report.md`
-- `.github/ISSUE_TEMPLATE/feature_request.md`
-- `docs/ops/status-page-fallback.md`
-- `docs/ops/release-ops-plan.md`
-- `docs/ops/smoke-test-report.md`
-- `docs/development/build-windows.md`
-- `docs/architecture/decisions/010-ai-integration-strategy.md`
+## Project Status
 
-## Watch Demo
+- Phase 1: foundation and security hardening completed
+- Phase 2: connection and read-only market flows completed
+- Phase 3: simulation trading experience completed
+- Phase 4: explainable AI integration completed
+- Phase 5: launch preparation and release operations completed for alpha
 
-The beta marketing stack now includes a planned walkthrough video package:
+## Contributing
 
-- full script in `docs/launch/video-demo-script.md`
-- recording prep in `docs/launch/pre-recording-checklist.md`
-- short-form edits in `docs/launch/social-cutdowns.md`
-- distribution plan in `docs/launch/video-demo-plan.md`
+This is an alpha release, so thoughtful issues, feedback, and security-minded improvements are welcome.
 
-Public placeholder links:
+- bug reports: [GitHub Issues](https://github.com/FreeDropOracle/CryptoDesk-ai/issues)
+- release process: [.github/RELEASE_TEMPLATE.md](.github/RELEASE_TEMPLATE.md)
+- conduct expectations: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+- security policy: [.github/SECURITY.md](.github/SECURITY.md)
 
-- Demo: `https://cryptodesk.ai/demo`
-- Beta signup: `https://cryptodesk.ai/beta`
+## Disclaimer
 
-## Launch Announcements
+CryptoDesk AI is not an exchange, custodian, or financial advisor. Trading digital assets involves risk, and you remain fully responsible for your own exchange credentials, portfolio actions, and legal compliance in your jurisdiction.
 
-The public-facing launch stack is now documented as well:
+This alpha should be treated as testing software, not a production trading environment.
 
-- master launch copy in `docs/launch/public-launch-announcement.md`
-- channel variants in `docs/launch/platform-variants.md`
-- press assets checklist in `docs/launch/press-kit.md`
-- lifecycle emails in `docs/launch/email-sequence.md`
-- day-of execution in `docs/launch/launch-day-runbook.md`
-- coordination notes in `docs/launch/public-announcement-plan.md`
+---
 
-## Release Process
-
-The release operations layer is now documented too:
-
-- GitHub release notes template in `.github/RELEASE_TEMPLATE.md`
-- issue intake templates in `.github/ISSUE_TEMPLATE/bug_report.md` and `.github/ISSUE_TEMPLATE/feature_request.md`
-- temporary service-health fallback in `docs/ops/status-page-fallback.md`
-- release workflow and SemVer guidance in `docs/ops/release-ops-plan.md`
-
-## Beta Positioning
-
-This repository is ready for documentation-led beta preparation and architecture review today.
-
-The beta program should focus on:
-
-- onboarding clarity
-- simulation vs live-trading understanding
-- AI trust and explanation quality
-- stability under real user interaction
-
-The beta program should not market the current build as live auto-trading software.
-
-## Important Release Note
-
-`v1.0.0-alpha.1` now has a packaged Windows x64 build for controlled beta distribution. It should still be treated as alpha software:
-
-- Windows may display an `Unknown Publisher` warning because code signing is not enabled yet
-- the primary distribution artifact is a zip package, not an installer
-- simulation-first usage remains the recommended path for new testers
+Built by Ahmed with AI-assisted engineering support.
