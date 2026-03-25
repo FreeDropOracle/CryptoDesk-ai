@@ -1,7 +1,7 @@
 # Beta Launch - Pre-Send Checklist
 
 **Release:** `v1.0.0-alpha.1`  
-**Owner:** Ahmed  
+**Owner:** Ahmed Sami Khedhri  
 **Goal:** send the first private beta links in under 5 minutes
 
 ## 1. Confirm the files exist

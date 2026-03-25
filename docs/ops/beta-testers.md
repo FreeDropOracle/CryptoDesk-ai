@@ -42,7 +42,7 @@ If no, even 1-2 words about what happened will help me fix it quickly.
 
 Thanks again for helping test this carefully.
 
-- Ahmed
+- Ahmed Sami Khedhri
 ```
 
 ## Day 3 Template - Feedback Request
@@ -64,7 +64,7 @@ You can reply here, open a GitHub issue, or message me on Discord.
 
 Thank you again for helping shape this carefully.
 
-- Ahmed
+- Ahmed Sami Khedhri
 ```
 
 ## Day 7 Template - Final Wrap-up
@@ -82,7 +82,7 @@ If there is one thing you would improve before that next step, what would it be?
 
 Really appreciate the time and care you gave this.
 
-- Ahmed
+- Ahmed Sami Khedhri
 ```
 
 ## Critical Issues Log
