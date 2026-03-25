@@ -1,0 +1,13 @@
+{
+  "id": "trade-sim-001",
+  "exchange": "binance",
+  "symbol": "BTC/USDT",
+  "side": "buy",
+  "type": "limit",
+  "quantity": 0.01,
+  "price": 65000,
+  "status": "filled",
+  "simulation": true,
+  "timestamp": "2026-03-22T10:00:00.000Z",
+  "clientOrderId": "client-sim-001"
+}

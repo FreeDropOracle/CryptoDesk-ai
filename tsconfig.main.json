@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "outDir": "./dist/main",
+    "types": ["node"],
+    "paths": {
+      "@main/*": ["src/main/*"],
+      "@shared/internal/*": ["src/shared/internal/*"],
+      "@shared/public/*": ["src/shared/public/*"]
+    }
+  },
+  "include": ["src/main/**/*", "src/preload/**/*", "src/shared/**/*"],
+  "exclude": ["src/renderer/**/*"]
+}

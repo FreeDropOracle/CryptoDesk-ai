@@ -1,0 +1,41 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "rootDir": "..",
+    "types": ["node"],
+    "typeRoots": [
+      "../.tscheck-tools/node_modules/@types",
+      "../node_modules/@types"
+    ]
+  },
+  "include": [
+    "unit/main/security/**/*.ts",
+    "unit/main/trading/**/*.ts",
+    "unit/renderer/**/*.ts",
+    "integration/api/**/*.ts",
+    "types/**/*.d.ts",
+    "../src/main/security/encryption.ts",
+    "../src/main/security/keychain.ts",
+    "../src/main/security/types.ts",
+    "../src/main/security/validator.ts",
+    "../src/main/trading/**/*.ts",
+    "../src/renderer/stores/market-store.ts",
+    "../src/renderer/stores/portfolio-store.ts",
+    "../src/renderer/hooks/useMarketData.ts",
+    "../src/renderer/hooks/usePortfolio.ts",
+    "../src/renderer/pages/Portfolio.tsx",
+    "../src/renderer/components/common/Button.tsx",
+    "../src/renderer/components/common/PhaseBadge.tsx",
+    "../src/renderer/utils/ipc.ts",
+    "../src/renderer/utils/formatters.ts",
+    "../src/renderer/utils/validators.ts",
+    "../src/shared/public/**/*.ts",
+    "../src/shared/internal/**/*.ts"
+  ],
+  "exclude": [
+    "../node_modules",
+    "../dist",
+    "../src/main/security/audit-log.ts"
+  ]
+}

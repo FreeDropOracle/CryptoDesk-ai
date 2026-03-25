@@ -1,0 +1,27 @@
+// File: src/preload/channels.ts
+// Responsibility: Enumerates the only IPC channels exposed to the renderer bridge.
+// Security: Keeps the preload surface explicit and reviewable.
+
+import { IPC_CHANNELS } from '@shared/internal/ipc.channels';
+
+export const EXPOSED_INVOKE_CHANNELS = Object.freeze([
+  IPC_CHANNELS.PORTFOLIO.FETCH,
+  IPC_CHANNELS.TRADE.PLACE,
+  IPC_CHANNELS.TRADE.CANCEL,
+  IPC_CHANNELS.TRADE.HISTORY,
+  IPC_CHANNELS.TRADE.RESET_SIMULATION,
+  IPC_CHANNELS.AI.GET_SIGNALS,
+  IPC_CHANNELS.AI.SUBSCRIBE_ALERTS,
+  IPC_CHANNELS.AI.UNSUBSCRIBE_ALERTS,
+  IPC_CHANNELS.SECURITY.SAVE_KEY,
+  IPC_CHANNELS.SECURITY.GET_KEY,
+  IPC_CHANNELS.SECURITY.DELETE_KEY,
+  IPC_CHANNELS.SETTINGS.GET,
+  IPC_CHANNELS.SETTINGS.UPDATE
+] as const);
+
+export const EXPOSED_EVENT_CHANNELS = Object.freeze([
+  IPC_CHANNELS.MARKET.DATA,
+  IPC_CHANNELS.PORTFOLIO.UPDATE,
+  IPC_CHANNELS.AI.ALERT
+] as const);

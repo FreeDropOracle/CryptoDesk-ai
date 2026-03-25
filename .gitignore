@@ -1,0 +1,41 @@
+# Build outputs
+dist/
+coverage/
+playwright-report/
+test-results/
+
+# Dependencies
+node_modules/
+.pnpm-store/
+.npm-cache/
+
+# Logs
+logs/
+*.log
+.tmp-dev-*.log
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Databases and local secrets
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+
+# OS and editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local tooling and caches
+.cache/
+.tools/
+.tscheck-tools/
+
+# Models
+assets/models/*.onnx
+!assets/models/.gitkeep

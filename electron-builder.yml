@@ -1,0 +1,55 @@
+# File: electron-builder.yml
+# Responsibility: Secure desktop packaging, signing, and release configuration.
+# Security: Packages only built artifacts and enables platform signing safeguards.
+appId: com.cryptodesk.ai
+productName: CryptoDesk AI
+directories:
+  output: dist/release
+  buildResources: assets/icons
+
+files:
+  - dist/**/*
+  - package.json
+  - assets/**/*
+
+extraResources:
+  - from: assets/models/
+    to: models/
+    filter: ["*.onnx", "*.json"]
+
+win:
+  target:
+    - target: zip
+      arch: [x64]
+  icon: assets/icons/icon.ico
+  signingHashAlgorithms: [sha256]
+  requestedExecutionLevel: asInvoker
+  artifactName: ${productName}-${version}-win-x64.${ext}
+  signAndEditExecutable: false
+
+mac:
+  target:
+    - target: dmg
+      arch: [x64, arm64]
+  icon: assets/icons/icon.icns
+  category: public.app-category.finance
+  hardenedRuntime: true
+  gatekeeperAssess: false
+  identity: ${APPLE_SIGNING_IDENTITY}
+  entitlements: build/entitlements.mac.plist
+  entitlementsInherit: build/entitlements.mac.plist
+  notarize: true
+
+linux:
+  target:
+    - AppImage
+    - deb
+  icon: assets/icons/icon_512x512.png
+  category: Finance
+
+publish:
+  provider: github
+  releaseType: draft
+
+afterSign: scripts/build/notarize.js
+afterPack: scripts/build/sign.js

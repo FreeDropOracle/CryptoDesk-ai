@@ -1,0 +1,24 @@
+/* File: src/renderer/styles/rtl.css */
+/* Responsibility: Minimal RTL support for Arabic UI flows. */
+/* Security: Presentation-only stylesheet. */
+
+:root[dir='rtl'] body {
+  direction: rtl;
+}
+
+:root[dir='rtl'] .app-shell {
+  grid-template-columns: 1fr 260px !important;
+}
+
+:root[dir='rtl'] .app-main {
+  text-align: right;
+}
+
+:root[dir='rtl'] .app-sidebar {
+  border-right: none !important;
+  border-left: 1px solid rgba(148, 163, 184, 0.14) !important;
+}
+
+:root[dir='rtl'] .tooltip-bubble {
+  text-align: right;
+}
