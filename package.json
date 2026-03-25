@@ -31,7 +31,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@tensorflow/tfjs": "4.17.0",
+    "@tensorflow/tfjs": "4.22.0",
     "better-sqlite3": "9.4.0",
     "ccxt": "4.2.1",
     "electron-log": "5.1.0",
