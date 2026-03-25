@@ -129,6 +129,7 @@ Launch package:
 - [Video Demo Script](docs/launch/video-demo-script.md)
 - [GitHub Release Draft Guide](docs/launch/github-release-draft.md)
 - [Smoke Test Report](docs/ops/smoke-test-report.md)
+- [Beta Pre-Send Checklist](docs/ops/beta-pre-send-checklist.md)
 - [Beta Testers Tracker](docs/ops/beta-testers.md)
 - [Alpha Round 1 Feedback Log](docs/feedback/alpha-round-1.md)
 
