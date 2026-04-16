@@ -22,7 +22,7 @@ What ships today:
 
 - real-time market data through validated Electron IPC flows.
 - read-only portfolio preview.
-- simulation trading with isolated virtual balances
+- simulation trading with isolated virtual balances.
 - explainable AI signals with transparent filtering and metrics
 - bilingual user experience in English and Arabic
 - onboarding flow with explicit risk acknowledgment
