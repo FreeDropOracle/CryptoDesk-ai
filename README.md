@@ -24,7 +24,7 @@ What ships today:
 - read-only portfolio preview.
 - simulation trading with isolated virtual balances.
 - explainable AI signals with transparent filtering and metrics.
-- bilingual user experience in English and Arabic
+- bilingual user experience in English and Arabic.
 - onboarding flow with explicit risk acknowledgment
 
 What is intentionally limited in `v1.0.0-alpha.1`:
