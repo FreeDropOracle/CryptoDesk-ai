@@ -10,7 +10,7 @@
 
 CryptoDesk AI is an AI-powered desktop trading co-pilot built with a security-first architecture. The current alpha is designed around three principles:
 
-- non-custodial credential handling
+- non-custodial credential handling.
 - simulation-first learning and testing
 - explainable, advisory-only AI
 
