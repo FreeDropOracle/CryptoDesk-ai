@@ -12,7 +12,7 @@ CryptoDesk AI is an AI-powered desktop trading co-pilot built with a security-fi
 
 - non-custodial credential handling.
 - simulation-first learning and testing.
-- explainable, advisory-only AI
+- explainable, advisory-only AI.
 
 This repository is ready for controlled beta review, contributor onboarding, and release operations. Live trading remains intentionally gated until signing, runtime hardening, and broader validation are complete.
 
