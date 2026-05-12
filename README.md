@@ -16,7 +16,7 @@ CryptoDesk AI is an AI-powered desktop trading co-pilot built with a security-fi
 
 This repository is ready for controlled beta review, contributor onboarding, and release operations. Live trading remains intentionally gated until signing, runtime hardening, and broader validation are complete.
 
-## Current Alpha Scope
+## Current Alpha Scope.
 
 What ships today:
 
